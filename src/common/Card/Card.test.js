@@ -21,19 +21,19 @@ describe("Card component", () => {
     expect(subtitle.text()).toBe("N°9");
   });
 
-  it("has an image as a header", () => {
-    const header = reactWrapper.find(".p-card-header");
+  it("has an image in the content", () => {
+    const header = reactWrapper.find(".p-card-content");
     expect(header.length).toBe(1);
-    expect(header.childAt(0).html()).toBe(
+    expect(header.childAt(1).html()).toBe(
       '<img alt="Card" src="square-riddle.jpg">'
     );
   });
 
-  it("display a placeholder if the header'src doesn't exist", () => {
+  it("display a placeholder if the image'src doesn't exist", () => {
     const wrapper = mount(<CardGame type="test" />);
-    const header = wrapper.find(".p-card-header");
-    expect(header.length).toBe(1);
-    expect(header.childAt(0).html()).toBe(
+    const image = wrapper.find(".p-card-content").childAt(1);
+    expect(image.length).toBe(1);
+    expect(image.html()).toBe(
       '<img alt="Card" src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png">'
     );
   });

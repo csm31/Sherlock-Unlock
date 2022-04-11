@@ -1,29 +1,31 @@
-import { Card } from "primereact/card";
 import { cardType } from "../constants";
+import { CardStyle } from "./CardStyle";
+import "primeicons/primeicons.css";
 
-export const CardGame = ({ type }) => {
-  const definedType = cardType[type];
-  const header = (
-    <img
-      alt="Card"
-      src={
-        definedType && definedType.image
-          ? require(`../../resources/${definedType.image}`)
-          : "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"
-      }
-    />
-  );
+export const CardGame = ({ name }) => {
+  const definedType = cardType[name];
+
   return (
-    <div>
+    <>
       {definedType && definedType.title && definedType.subtitle && (
-        <Card
-          title={definedType.title}
-          subTitle={`N°${definedType.subtitle}`}
-          header={header}
-        >
-          <p>{definedType.content}</p>
-        </Card>
+        <CardStyle cardType={definedType.cardType}>
+          <div className="p-card-header">
+            <p className="p-card-subtitle">{`N°${definedType.subtitle}`}</p>
+            <h2 className="p-card-title">{definedType.title}</h2>
+          </div>
+          <div className="p-card-content">
+            <div>{definedType.content}</div>
+            <img
+              alt="Card"
+              src={
+                definedType.image
+                  ? require(`../../resources/${definedType.image}`)
+                  : "https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png"
+              }
+            />
+          </div>
+        </CardStyle>
       )}
-    </div>
+    </>
   );
 };

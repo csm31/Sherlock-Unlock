@@ -1,12 +1,12 @@
 import { css } from "@emotion/react";
 
 export const GlobalStyles = (theme) => css`
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Grape+Nuts&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Grape+Nuts&display=swap");
 
-// Bubblegum Sans', cursive
-
+  
+  // "Grape Nuts", cursive;
   * {
-    font-family: 'Grape Nuts', cursive;;
+    font-family: 'Bubblegum Sans', cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,9 +24,10 @@ export const GlobalStyles = (theme) => css`
   //   font-size: 1.5rem;
   // }
 
-  // h2 {
-  //   font-size: 1rem;
-  // }
+  h2 {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
 
   // h3 {
   //   font-size: 1rem;
@@ -50,12 +51,12 @@ export const GlobalStyles = (theme) => css`
   //   list-style: none;
   // }
 
-  // button {
-  //   border: none;
-  //   font-size: 1rem;
-  //   cursor: pointer;
-  //   background-color: transparent;
-  // }
+  button {
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+  }
 
   // main {
   //   // push the footer at the bottom
