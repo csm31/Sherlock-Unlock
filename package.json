@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.0",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-redux": "^7.2.8",
     "react-scripts": "5.0.0"
   },
@@ -32,5 +33,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "enzyme": "^3.11.0"
   }
 }
