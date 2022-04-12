@@ -5,6 +5,7 @@ import './AppStyle.js';
 import { Card } from '../common/Card/Card';
 import { Introduction } from '../common/Introduction/Introduction';
 import { Device } from '../common/Device/Device';
+import { Inventory } from '../common/Inventory/Inventory';
 
 function App() {
   return (
