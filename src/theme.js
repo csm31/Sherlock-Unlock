@@ -11,9 +11,6 @@ export const theme = {
     },
     key: {
       backgroundColor: "hsl(200, 65%, 41%)",
-    },
-    exit: {
-      backgroundColor: "hsl(264, 93%, 53%)",
     }
   },
 };

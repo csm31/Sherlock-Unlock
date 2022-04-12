@@ -1,4 +1,3 @@
-
 export const cardType = {
   riddleSquare: {
     title: "The square riddle",
@@ -21,9 +20,16 @@ export const cardType = {
     content: "The rusty key must open something in the room...",
     image: "key.jpg",
   },
+  paper: {
+    title: "A piece of paper",
+    cardType: "key",
+    subtitle: 1,
+    content: "The paper contains the code 9245",
+    image: "mystery.png",
+  },
   exitDoor: {
     title: "A locked door",
-    cardType: "exit",
+    cardType: "object",
     subtitle: 5,
     content: "The door is locked with a code. I must find it to escape.",
     image: "door-code.png",
@@ -31,6 +37,9 @@ export const cardType = {
 
   test: {
     title: "Test",
-    subtitle: 9
-  }
+    cardType: "exit",
+    subtitle: 9,
+    content: "Test",
+    image: "test.png",
+  },
 };

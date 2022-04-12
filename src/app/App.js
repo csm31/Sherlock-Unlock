@@ -3,16 +3,14 @@ import logo from '../logo.svg';
 import { Counter } from '../features/counter/Counter';
 import './AppStyle.js';
 import { Card } from '../common/Card/Card';
+import { Introduction } from '../common/Introduction/Introduction';
 
 function App() {
   return (
    
     <div className="App">
        
-       <Card name="chest"/>
-       <Card name="key"/>
-       <Card name="exitDoor"/>
-       <Card name="riddleSquare"/>
+     <Introduction/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />

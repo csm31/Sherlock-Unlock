@@ -1,16 +1,19 @@
 import React from "react";
-import { mount } from "enzyme";
+import { mount} from "enzyme";
 import { Card } from "./Card";
+import {  ThemeProvider } from "@emotion/react";
+import { theme } from "../../theme";
 
 describe("Card component", () => {
   // render Card before each test
   let reactWrapper;
   beforeEach(() => {
-    reactWrapper = mount(<Card type="riddleSquare" />);
+    reactWrapper = mount(<ThemeProvider theme={theme}><Card name="riddleSquare" /></ThemeProvider>);
   });
 
   it("has a title", () => {
-    const title = reactWrapper.find(".p-card-title");
+    const title = reactWrapper.find("h2");
+    console.log(reactWrapper.debug())
     expect(title.length).toBe(1);
     expect(title.text()).toBe("The square riddle");
   });
@@ -29,27 +32,15 @@ describe("Card component", () => {
     );
   });
 
-  it("display a placeholder if the image'src doesn't exist", () => {
-    const wrapper = mount(<Card type="test" />);
-    const image = wrapper.find(".p-card-content").childAt(1);
-    expect(image.length).toBe(1);
-    expect(image.html()).toBe(
-      '<img alt="Card" src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png">'
-    );
-  });
 
   it("contains text", () => {
     const content = reactWrapper.find(".p-card-content");
-    expect(content.length).toBe(1);
+    expect(content.childAt(0).length).toBe(1);
     expect(content.text()).toBe("How many squares do you see in that picture?");
   });
 
-  it("<p> around the content ", () => {
-    expect(reactWrapper.find("p").length).toBe(1);
-  });
-
-  it("display empty <div> if type is not defined in constants ", () => {
-    const wrapper = mount(<Card type="test2" />);
+  it("display empty <div> if the name is not defined in constants ", () => {
+    const wrapper = mount(<Card name="test2" />);
     expect(wrapper.find("div").children().length).toBe(0);
   });
 });
