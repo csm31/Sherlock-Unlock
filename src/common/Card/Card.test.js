@@ -1,12 +1,12 @@
 import React from "react";
 import { mount } from "enzyme";
-import { CardGame } from "./Card";
+import { Card } from "./Card";
 
 describe("Card component", () => {
   // render Card before each test
   let reactWrapper;
   beforeEach(() => {
-    reactWrapper = mount(<CardGame type="riddleSquare" />);
+    reactWrapper = mount(<Card type="riddleSquare" />);
   });
 
   it("has a title", () => {
@@ -30,7 +30,7 @@ describe("Card component", () => {
   });
 
   it("display a placeholder if the image'src doesn't exist", () => {
-    const wrapper = mount(<CardGame type="test" />);
+    const wrapper = mount(<Card type="test" />);
     const image = wrapper.find(".p-card-content").childAt(1);
     expect(image.length).toBe(1);
     expect(image.html()).toBe(
@@ -49,7 +49,7 @@ describe("Card component", () => {
   });
 
   it("display empty <div> if type is not defined in constants ", () => {
-    const wrapper = mount(<CardGame type="test2" />);
+    const wrapper = mount(<Card type="test2" />);
     expect(wrapper.find("div").children().length).toBe(0);
   });
 });

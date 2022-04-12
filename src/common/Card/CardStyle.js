@@ -1,8 +1,14 @@
 import styled from "@emotion/styled";
 
 export const CardStyle = styled.button`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
   width: 10rem;
-  border: 3px solid ${(props) => props.theme.cardType[props.cardType].backgroundColor};
+  height: 15rem;
+  border: 3px solid
+    ${(props) => props.theme.cardType[props.cardType].backgroundColor};
   border-radius: 4px;
   &:focus {
     border-color: green;
@@ -12,7 +18,8 @@ export const CardStyle = styled.button`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: ${(props) => props.theme.cardType[props.cardType].backgroundColor};
+    background-color: ${(props) =>
+      props.theme.cardType[props.cardType].backgroundColor};
   }
 
   & .p-card-content {

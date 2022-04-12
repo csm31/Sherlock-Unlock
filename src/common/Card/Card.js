@@ -2,7 +2,7 @@ import { cardType } from "../constants";
 import { CardStyle } from "./CardStyle";
 import "primeicons/primeicons.css";
 
-export const CardGame = ({ name }) => {
+export const Card = ({ name }) => {
   const definedType = cardType[name];
 
   return (

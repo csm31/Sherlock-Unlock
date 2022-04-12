@@ -2,13 +2,17 @@ import React from 'react';
 import logo from '../logo.svg';
 import { Counter } from '../features/counter/Counter';
 import './AppStyle.js';
-import { CardGame } from '../common/Card/Card';
+import { Card } from '../common/Card/Card';
 
 function App() {
   return (
    
     <div className="App">
-       <CardGame name="riddleSquare"/>
+       
+       <Card name="chest"/>
+       <Card name="key"/>
+       <Card name="exitDoor"/>
+       <Card name="riddleSquare"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
