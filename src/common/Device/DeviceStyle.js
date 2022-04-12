@@ -11,11 +11,11 @@ export const DivStyle = styled.div`
   border: 3px solid black;
   border-radius: 4px;
   width: 10rem;
-  background-color: hsl(0, 0%, 97%);
+  background-color: ${props=>props.theme.colors.whiteGrey};
   & div {
     margin: 0.5rem;
     width: fit-content;
-    background-color: grey;
+    background-color: ${props=>props.theme.colors.grey};
   }
 `;
 
