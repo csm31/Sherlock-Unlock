@@ -5,13 +5,14 @@ import './AppStyle.js';
 import { Card } from '../common/Card/Card';
 import { Introduction } from '../common/Introduction/Introduction';
 import { Device } from '../common/Device/Device';
+import { Inventory } from '../common/Inventory/Inventory';
 
 function App() {
   return (
    
     <div className="App">
        
-     <Device/>
+     <Inventory/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
