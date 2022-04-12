@@ -8,6 +8,7 @@ border: 1px solid black;
 & img {
     width: 10rem;
 }
+
 & p {
     width: 15rem;
     margin: 0.75rem 0.5rem;
