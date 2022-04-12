@@ -29,6 +29,9 @@ export const GlobalStyles = (theme) => css`
     margin: 0.5rem;
   }
 
+  p {
+    margin: 0.5rem;
+  }
   // h3 {
   //   font-size: 1rem;
   //   font-weight: 500;
@@ -52,7 +55,6 @@ export const GlobalStyles = (theme) => css`
   // }
 
   button {
-    border: none;
     font-size: 1rem;
     cursor: pointer;
     background-color: transparent;

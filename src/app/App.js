@@ -4,13 +4,14 @@ import { Counter } from '../features/counter/Counter';
 import './AppStyle.js';
 import { Card } from '../common/Card/Card';
 import { Introduction } from '../common/Introduction/Introduction';
+import { Device } from '../common/Device/Device';
 
 function App() {
   return (
    
     <div className="App">
        
-     <Introduction/>
+     <Device/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
