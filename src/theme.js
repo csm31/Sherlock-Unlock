@@ -15,4 +15,18 @@ export const theme = {
       backgroundColor: "hsl(200, 65%, 41%)",
     }
   },
+  badgePosition: {
+    5: {
+      top: "130px",
+      right: "50px",
+    },
+    2: {
+      top: "220px",
+      right: "270px",
+    },
+    9: {
+      top: "150px",
+      right: "220px",
+    },
+  }
 };
