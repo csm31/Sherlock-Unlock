@@ -4,8 +4,9 @@ import { BadgeStyle } from "./RoomStyle";
 
 export const Room = ({ handleBadgeClick }) => {
   return (
-    <RoomStyle>
+    <RoomStyle className="room">
       <img alt="Sherlock Holmes office" src={room} />
+
       <BadgeStyle
         label="5"
         className="p-button-rounded p-button-sm door"

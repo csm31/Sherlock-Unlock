@@ -4,7 +4,7 @@ import { IntroductionStyle } from "./IntroductionStyle";
 
 export const Introduction = () => {
   return (
-    <IntroductionStyle>
+    <IntroductionStyle className="introduction">
       <img src={Sherlock} alt="Sherlock Holmes smoking" />
       <div>
         <p>

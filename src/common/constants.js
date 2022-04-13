@@ -2,7 +2,7 @@ export const cardType = {
   riddleSquare: {
     title: "The square riddle",
     cardType: "riddle",
-    subtitle: 9,
+    subtitle: 4,
     content:
       "A paper with the riddle: how many squares do you see in that picture?",
     image: "square-riddle.jpg",
@@ -17,20 +17,20 @@ export const cardType = {
   key: {
     title: "A rusty key",
     cardType: "key",
-    subtitle: 4,
+    subtitle: 9,
     content: "The rusty key must open something in the room...",
     image: "key.jpg",
   },
-  paper: {
-    title: "A piece of paper",
-    cardType: "key",
-    subtitle: 1,
-    content: "The paper contains the code 9245",
-    image: "mystery.png",
-  },
+  // paper: {
+  //   title: "A piece of paper",
+  //   cardType: "key",
+  //   subtitle: 1,
+  //   content: "The paper contains the code 9245",
+  //   image: "mystery.png",
+  // },
   exitDoor: {
     title: "A locked door",
-    cardType: "object",
+    cardType: "exit",
     subtitle: 5,
     content: "The door is locked with a code. I must find it to escape.",
     image: "door-code.png",

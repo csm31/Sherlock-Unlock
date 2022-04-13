@@ -12,6 +12,7 @@ export const DivStyle = styled.div`
   border-radius: 4px;
   width: 10rem;
   background-color: ${props=>props.theme.colors.whiteGrey};
+  margin: 0.5rem;
   & div {
     margin: 0.5rem;
     width: fit-content;

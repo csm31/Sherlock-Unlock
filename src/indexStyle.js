@@ -20,9 +20,9 @@ export const GlobalStyles = (theme) => css`
   //   box-shadow: ${theme.boxShadowComplete};
   // }
 
-  // h1 {
-  //   font-size: 1.5rem;
-  // }
+  h1 {
+    margin: 0.5rem;
+  }
 
   h2 {
     font-size: 1rem;

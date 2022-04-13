@@ -1,39 +1,37 @@
-// .App {
-//   text-align: center;
-// }
+import styled from "@emotion/styled";
 
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
+export const HeaderStyle = styled.header`
+  text-align: center;
+`;
+export const MainStyle = styled.main`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
 
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-float infinite 3s ease-in-out;
-//   }
-// }
+  & .introduction {
+    grid-column: 1 / 3;
+  }
 
-// .App-header {
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-// }
+  & .room-device {
+    display: flex;
+    align-items: center;
+    grid-column: 1 / 3;
+  }
 
-// .App-link {
-//   color: rgb(112, 76, 182);
-// }
+  & .inventory {
+    grid-column: 1 / 3;
+  }
 
-// @keyframes App-logo-float {
-//   0% {
-//     transform: translateY(0);
-//   }
-//   50% {
-//     transform: translateY(10px);
-//   }
-//   100% {
-//     transform: translateY(0px);
-//   }
-// }
+  @media screen and (min-width: 320px) and (max-width: 600px) {
+    grid-template-columns: 100%;
+    
+    & .introduction {
+      grid-column: 1 / 2;
+    }
+    // & .room-device {
+    //   grid-column: 1 / 2;
+    // }
+  }
+`;

@@ -13,20 +13,23 @@ export const theme = {
     },
     key: {
       backgroundColor: "hsl(200, 65%, 41%)",
+    },
+    exit: {
+      backgroundColor: "hsl(354, 97%, 65%)"
     }
   },
   badgePosition: {
     5: {
       top: "130px",
-      right: "50px",
+      right: "10px",
     },
     2: {
       top: "220px",
-      right: "270px",
+      right: "230px",
     },
     9: {
-      top: "150px",
-      right: "220px",
+      top: "160px",
+      right: "180px",
     },
   }
 };

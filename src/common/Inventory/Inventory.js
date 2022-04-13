@@ -6,7 +6,7 @@ export const Inventory = () => {
     e.preventDefault();
   };
   return (
-    <InventoryStyle>
+    <InventoryStyle className="inventory">
       <h2>Inventory</h2>
       <p>To combine 2 cards, select them and click on the button</p>
       <ButtonStyle label="Combine" onClick={(e) => handleCombineClick(e)} />
