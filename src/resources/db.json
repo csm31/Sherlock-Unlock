@@ -30,7 +30,8 @@
       "cardType": "exit",
       "content": "The door is locked with a code. I must find it to escape.",
       "image": "door-code.png",
-      "revealed": false
+      "revealed": false,
+      "code": 30
     }
   ]
 }
