@@ -15,7 +15,7 @@ export const theme = {
     key: {
       backgroundColor: "hsl(200, 65%, 41%)",
     },
-    exit: {
+    interactive: {
       backgroundColor: "hsl(58, 93%, 56%)",
     },
   },

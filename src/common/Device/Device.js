@@ -26,23 +26,6 @@ export const Device = () => {
     }
   };
 
-//   const accept = () => {
-//     toast.current.show({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
-// }
-
-// const reject = () => {
-//     toast.current.show({ severity: 'warn', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
-// }
-
-  // const confirm = () => {
-  //   confirmDialog({
-  //       message: 'Are you sure you want to proceed?',
-  //       header: 'Confirmation',
-  //       icon: 'pi pi-exclamation-triangle',
-  //       accept,
-  //       reject
-  //   });
-// }
 
   return (
     <>

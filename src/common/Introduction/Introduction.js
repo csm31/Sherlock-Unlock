@@ -11,18 +11,13 @@ export const Introduction = () => {
           Sherlock Holmes must decide who will be his next assistant.
           <br />
           Since you applied for the job, you will do the final test prepared by
-          him. He locked you in his office with a strange device.
-      
-          You need to get out!
+          him. He locked you in his office. You need to get out!
         </p>
         <p>
           In the room several elements are visible. Click on a number to reveal
           a new card in your inventory.
           <br />
-          The orange cards are enigmas to solve. It will lead to a code to enter
-          to the device.
-          <br />
-          Yellow cards are cards to combine with blue cards.
+          You will need to combine cards, solve enigmas and enter codes.
         </p>
         <p> Good luck!</p>
       </div>

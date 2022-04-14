@@ -27,7 +27,7 @@
     {
       "id": 5,
       "title": "A locked door",
-      "cardType": "exit",
+      "cardType": "interactive",
       "content": "The door is locked with a code. I must find it to escape.",
       "image": "door-code.png",
       "revealed": false,
