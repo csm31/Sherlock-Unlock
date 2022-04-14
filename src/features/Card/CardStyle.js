@@ -8,12 +8,13 @@ export const CardStyle = styled.button`
   width: 10rem;
   height: 15rem;
   border: 3px solid
-    ${(props) => props.theme.cardType[props.cardType].backgroundColor};
-  border-radius: 4px;
-  &:focus {
-    border-color: green;
-    border-width: 4px;
-  }
+    ${(props) =>
+      props.className === "selected"
+        ? "green"
+        : props.theme.cardType[props.cardType].backgroundColor};
+  border-radius: 5px;
+  margin: 0.25rem;
+
   & .p-card-header {
     display: flex;
     justify-content: space-evenly;

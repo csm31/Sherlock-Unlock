@@ -6,9 +6,10 @@ export const HeaderStyle = styled.header`
 export const MainStyle = styled.main`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 2rem;
   align-items: center;
-  justify-items: center;
+  // justify-items: center;
 
   & .introduction {
     grid-column: 1 / 3;
@@ -30,8 +31,10 @@ export const MainStyle = styled.main`
     & .introduction {
       grid-column: 1 / 2;
     }
-    // & .room-device {
-    //   grid-column: 1 / 2;
-    // }
+    & .room-device {
+      grid-column: 1 / 2;
+      flex-direction: column;
+    }
+
   }
 `;

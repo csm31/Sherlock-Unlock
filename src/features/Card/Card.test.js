@@ -18,10 +18,10 @@ describe("Card component", () => {
     expect(title.text()).toBe("The square riddle");
   });
 
-  it("has a subtitle that will be the card number", () => {
-    const subtitle = reactWrapper.find(".p-card-subtitle");
-    expect(subtitle.length).toBe(1);
-    expect(subtitle.text()).toBe("N°9");
+  it("has a number", () => {
+    const number = reactWrapper.find(".p-card-number");
+    expect(number.length).toBe(1);
+    expect(number.text()).toBe("N°9");
   });
 
   it("has an image in the content", () => {

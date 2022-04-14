@@ -22,8 +22,8 @@ Sherlock Unlock is an escape game. The goal is to solve puzzles to escape from a
 ## Start the app
 
 - Run `npm install` to install the libraries
-- Run `npm run dev` to run the app in development mode.\
-- Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Run `npm run dev` to run the app in development mode with JSON Server.\
+- Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
 ## Technical choices
 

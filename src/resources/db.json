@@ -1,0 +1,36 @@
+{
+  "cards": [
+    {
+      "id": 11,
+      "title": "The squares",
+      "cardType": "riddle",
+      "content": "A paper with the riddle: how many squares do you see in that picture?",
+      "image": "square-riddle.jpg",
+      "revealed": false
+    },
+    {
+      "id": 2,
+      "title": "An old chest",
+      "cardType": "object",
+      "content": "The old chest is closed. What secrets could it be hidden?",
+      "image": "chest.png",
+      "revealed": true
+    },
+    {
+      "id": 9,
+      "title": "A rusty key",
+      "cardType": "key",
+      "content": "The rusty key must open something in the room...",
+      "image": "key.jpg",
+      "revealed": true
+    },
+    {
+      "id": 5,
+      "title": "A locked door",
+      "cardType": "exit",
+      "content": "The door is locked with a code. I must find it to escape.",
+      "image": "door-code.png",
+      "revealed": false
+    }
+  ]
+}

@@ -20,6 +20,10 @@ export const GlobalStyles = (theme) => css`
   //   box-shadow: ${theme.boxShadowComplete};
   // }
 
+  main {
+    margin: 1rem;
+  }
+
   h1 {
     margin: 0.5rem;
   }

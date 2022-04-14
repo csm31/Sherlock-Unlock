@@ -1,8 +1,8 @@
-export const cardType = {
+export const cards = {
   riddleSquare: {
     title: "The square riddle",
     cardType: "riddle",
-    subtitle: 4,
+    number: 4,
     content:
       "A paper with the riddle: how many squares do you see in that picture?",
     image: "square-riddle.jpg",
@@ -10,28 +10,28 @@ export const cardType = {
   chest: {
     title: "An old chest",
     cardType: "object",
-    subtitle: 2,
+    number: 2,
     content: "The old chest is closed. What secrets could it be hidden?",
     image: "chest.png",
   },
   key: {
     title: "A rusty key",
     cardType: "key",
-    subtitle: 9,
+    number: 9,
     content: "The rusty key must open something in the room...",
     image: "key.jpg",
   },
   // paper: {
   //   title: "A piece of paper",
   //   cardType: "key",
-  //   subtitle: 1,
+  //   number: 1,
   //   content: "The paper contains the code 9245",
   //   image: "mystery.png",
   // },
   exitDoor: {
     title: "A locked door",
     cardType: "exit",
-    subtitle: 5,
+    number: 5,
     content: "The door is locked with a code. I must find it to escape.",
     image: "door-code.png",
   },
@@ -39,8 +39,11 @@ export const cardType = {
   test: {
     title: "Test",
     cardType: "exit",
-    subtitle: 9,
+    number: 12,
     content: "Test",
     image: "test.png",
   },
 };
+
+export const baseURL="http://localhost:3001"
+export const endPoint="/cards"
