@@ -21,7 +21,7 @@ export const GlobalStyles = (theme) => css`
   // }
 
   main {
-    margin: 1rem;
+    margin: 2rem;
   }
 
   h1 {
@@ -29,12 +29,13 @@ export const GlobalStyles = (theme) => css`
   }
 
   h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 0.5rem;
   }
 
   p {
     margin: 0.5rem;
+    font-size: 1.25rem;
   }
   // h3 {
   //   font-size: 1rem;

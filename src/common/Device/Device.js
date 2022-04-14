@@ -1,24 +1,49 @@
 import { useState } from "react";
 import { InputStyle, DivStyle, ButtonStyle } from "./DeviceStyle";
 import { selectAvailableCards } from "../../features/Card/cardSlice";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { initializeGame } from "../../features/Card/cardSlice";
+import { confirmDialog } from 'primereact/confirmdialog';
+// import {toast} from 'primereact/toast'
 
 export const Device = () => {
   const [input1, setInput1] = useState();
   const [input2, setInput2] = useState();
 
   const doorCard = useSelector(selectAvailableCards).find((el) => el.id === 5);
+  const dispatch = useDispatch();
 
   const handleClick = (e) => {
     e.preventDefault();
     const sum = input1.toString() + input2.toString();
     if (Number(sum) === doorCard.code) {
       toast.success("Congratulation! You escaped from the room.");
+      // dispatch(initializeGame());
+      // window.location.reload()
     } else {
       toast.error("Wrong combination. Try again!");
     }
   };
+
+//   const accept = () => {
+//     toast.current.show({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
+// }
+
+// const reject = () => {
+//     toast.current.show({ severity: 'warn', summary: 'Rejected', detail: 'You have rejected', life: 3000 });
+// }
+
+  // const confirm = () => {
+  //   confirmDialog({
+  //       message: 'Are you sure you want to proceed?',
+  //       header: 'Confirmation',
+  //       icon: 'pi pi-exclamation-triangle',
+  //       accept,
+  //       reject
+  //   });
+// }
+
   return (
     <>
       <DivStyle>
@@ -45,7 +70,8 @@ export const Device = () => {
         <ButtonStyle
           label="Ok"
           className="p-button-sm"
-          onClick={(e) => handleClick(e)}
+          // onClick={(e) => handleClick(e)}
+          // onClick={confirm}
         />
       </DivStyle>
     </>

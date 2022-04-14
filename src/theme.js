@@ -1,8 +1,9 @@
 export const theme = {
   colors: {
-    orange: "hsl(33,100%,50%)",
     whiteGrey: "hsl(0, 0%, 97%)",
-    grey: "	hsl(0,0%,50%)"
+    grey: "hsl(0,0%,50%)",
+    purpleOpacity50: "hsla(231, 48%, 48%, 50%)",
+    greenOpacity20: "hsla(120,100%,25%, 20%)"
   },
   cardType: {
     riddle: {
@@ -15,8 +16,8 @@ export const theme = {
       backgroundColor: "hsl(200, 65%, 41%)",
     },
     exit: {
-      backgroundColor: "hsl(354, 97%, 65%)"
-    }
+      backgroundColor: "hsl(58, 93%, 56%)",
+    },
   },
   badgePosition: {
     5: {
@@ -31,5 +32,5 @@ export const theme = {
       top: "160px",
       right: "180px",
     },
-  }
+  },
 };

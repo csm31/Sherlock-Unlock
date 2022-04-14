@@ -19,13 +19,10 @@ function App() {
       </HeaderStyle>
       <MainStyle>
         <Introduction />
-        <div className="room-device">
           <Room />
-          <Device />
-        </div>
         <Inventory />
       </MainStyle>
-      <ToastContainer autoClose={false} position="bottom-center"  />
+      <ToastContainer position="bottom-center"  />
     </>
   );
 }

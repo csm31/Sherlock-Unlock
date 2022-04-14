@@ -56,6 +56,8 @@ export const Inventory = () => {
           );
         })}
       </div>
+      {!revealedCards.length && <p>Your inventory is empty so far.</p>}
+      {/* Only display the button when it is possible to combine */}
       {revealedCards.length >= 2 && (
         <>
           <p>To combine 2 cards, select them and click on the button</p>
