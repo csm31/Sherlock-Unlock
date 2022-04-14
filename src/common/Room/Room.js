@@ -1,27 +1,15 @@
 import room from "../../resources/room.jpg";
 import { RoomStyle } from "./RoomStyle";
-import { BadgeStyle } from "./RoomStyle";
+import { Badge } from "../Badge/Badge";
 
-export const Room = ({ handleBadgeClick }) => {
+export const Room = () => {
+
   return (
     <RoomStyle className="room">
       <img alt="Sherlock Holmes office" src={room} />
-
-      <BadgeStyle
-        label="5"
-        className="p-button-rounded p-button-sm door"
-        onClick={(e) => handleBadgeClick(e)}
-      />
-      <BadgeStyle
-        label="2"
-        className="p-button-rounded p-button-sm chest"
-        onClick={(e) => handleBadgeClick(e)}
-      />
-      <BadgeStyle
-        label="9"
-        className="p-button-rounded p-button-sm riddle-square"
-        onClick={(e) => handleBadgeClick(e)}
-      />
+      <Badge label="5" name="door" />
+      <Badge label="2" name="chest" />
+      <Badge label="9" name="riddle-square" />
     </RoomStyle>
   );
 };

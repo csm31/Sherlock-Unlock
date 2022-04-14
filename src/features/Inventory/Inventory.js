@@ -30,7 +30,7 @@ export const Inventory = () => {
       const combinedId = selectedCards.reduce((a, b) => a + b);
       if (availableCards.find((card) => card.id === combinedId)) {
         dispatch(revealCard(combinedId));
-        dispatch(hideCards(revealedCards));
+        dispatch(hideCards(selectedCards));
         toast.success("Right combination. Find a new card in your inventory.");
       } else {
         toast.error("Wrong combination. Try again!");

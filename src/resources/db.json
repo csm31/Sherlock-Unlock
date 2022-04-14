@@ -14,7 +14,7 @@
       "cardType": "object",
       "content": "The old chest is closed. What secrets could it be hidden?",
       "image": "chest.png",
-      "revealed": true
+      "revealed": false
     },
     {
       "id": 9,
@@ -22,7 +22,7 @@
       "cardType": "key",
       "content": "The rusty key must open something in the room...",
       "image": "key.jpg",
-      "revealed": true
+      "revealed": false
     },
     {
       "id": 5,
