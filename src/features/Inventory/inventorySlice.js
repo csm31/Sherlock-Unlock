@@ -1,11 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import fetchCards from "../../API/fetchCards";
+
 import fetchCombinedCard from "../../API/fetchCombinedCard";
 import patchCard from "../../API/patchCard";
-import postCards from "../../API/postCards";
-import {
-  endPointInitial,
-} from "../../common/constants";
 
 const initialState = {
   revealedCards: [],
@@ -16,14 +12,7 @@ const initialState = {
   },
 };
 
-export const initializeGame = createAsyncThunk(
-  "cards/initializeGame",
-  async () => {
-    // GET on the database
-    const responseJSON = await fetchCards();
-    return responseJSON;
-  }
-);
+
 
 export const fetchCombinedCardThunk = createAsyncThunk(
   "cards/fetchCombinedCard",
@@ -45,24 +34,9 @@ export const inventorySlice = createSlice({
   name: "inventory",
   initialState,
   reducers: {
-    revealCard: (state, action) => {
-      state.revealedCards.push(action.payload.number);
-    },
+   
   },
-  extraReducers: {
-    [initializeGame.pending]: (state, action) => {
-      state.loading.revealedCards = "loading";
-    },
-    [initializeGame.fulfilled]: (state, action) => {
-      state.loading.revealedCards = "fulfilled";
-
-      action.payload.forEach((card) => {
-        card.revealed && state.revealedCards.push(card);
-      });
-    },
-    [initializeGame.rejected]: (state, action) => {
-      state.loading.revealedCards = "rejected";
-    },
+  extraReducers:{
     [fetchCombinedCardThunk.pending]: (state, action) => {
       state.loading.combinedCard = "loading";
     },
@@ -92,6 +66,4 @@ export const { revealCard } = inventorySlice.actions;
 // export slice
 export default inventorySlice.reducer;
 
-// The function below is called a selector and allows us to select a value from
-// the state.
-export const selectRevealedCards = (state) => state.inventory.revealedCards;
+

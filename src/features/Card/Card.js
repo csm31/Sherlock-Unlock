@@ -8,7 +8,7 @@ export const Card = ({ card }) => {
   const selectedCards = useSelector(selectCards);
 
   const isSelected =
-    selectedCards.lenght !== 0 &&
+    selectedCards.length !== 0 &&
     selectedCards.find((number) => number === card.id);
 
   return (
