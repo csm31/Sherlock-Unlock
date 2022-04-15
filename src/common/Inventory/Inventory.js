@@ -1,4 +1,4 @@
-import { ButtonStyle } from "../../common/Device/DeviceStyle";
+import { ButtonStyle } from "../../common/Introduction/IntroductionStyle";
 import { InventoryStyle } from "./InventoryStyle";
 import {
   selectRevealedCards,
@@ -6,11 +6,11 @@ import {
   revealCard,
   hideCards,
   initializeGame,
-} from "../Card/cardSlice";
+} from "../../features/Card/cardSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Card } from "../Card/Card";
+import { Card } from "../../features/Card/Card";
 import { useEffect } from "react";
-import { selectCards } from "../Card/cardSlice";
+import { selectCards } from "../../features/Card/cardSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

@@ -1,15 +1,11 @@
 import React from "react";
-// import logo from '../logo.svg';
-// import { Counter } from '../features/counter/Counter';
-// import { Card } from "../common/Card/Card";
 import { Introduction } from "../common/Introduction/Introduction";
-import { Device } from "../common/Device/Device";
-import { Inventory } from "../features/Inventory/Inventory";
+import { Inventory } from "../common/Inventory/Inventory";
 import { Room } from "../common/Room/Room";
 import { MainStyle, HeaderStyle } from "./AppStyle.js";
-// import { Card } from "../common/Card/Card";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   return (
@@ -18,11 +14,22 @@ function App() {
         <h1>Sherlock Unlock</h1>
       </HeaderStyle>
       <MainStyle>
-        <Introduction />
-          <Room />
-        <Inventory />
+        <Routes>
+          <Route path="/" element={<Introduction />} />
+          <Route
+            path="game"
+            element={
+              <>
+                <Room />
+                <Inventory />
+              </>
+            }
+          />
+          {/* Match only when no other routes do */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
       </MainStyle>
-      <ToastContainer position="bottom-center"  />
+      <ToastContainer position="bottom-center" autoClose={3000}/>
     </>
   );
 }

@@ -1,24 +1,18 @@
-import { CardStyle, InputStyle, ButtonStyle, DialogStyle } from "./CardStyle";
+import { CardStyle } from "./CardStyle";
 import { selectCard, deselectCard, selectCards } from "./cardSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { Modal } from "../../common/Modal/Modal";
 
 export const Card = ({ card }) => {
-  const dispatch = useDispatch();
-  const selectedCards = useSelector(selectCards);
-
-  const [inputValue, setInputValue] = useState();
   const [displayModal, setDisplayModal] = useState(false);
+  const selectedCards = useSelector(selectCards);
+  const isSelected = selectedCards.find((number) => number === card.id);
 
-  const isSelected =
-    selectedCards.length !== 0 &&
-    selectedCards.find((number) => number === card.id);
-
-  const onHide = () => {
-    setDisplayModal(false);
-  };
-
+  const dispatch = useDispatch();
+  /**
+   * Display the modal if the card is interactive.If not, select it.
+   */
   const handleClickOnCard = () => {
     if (card.cardType === "interactive") {
       setDisplayModal(!displayModal);
@@ -28,41 +22,14 @@ export const Card = ({ card }) => {
         : dispatch(deselectCard({ id: card.id }));
     }
   };
+
   return (
     <>
-      {/* Define a modal */}
-      <DialogStyle
-        visible={displayModal}
-        style={{ width: "50vw" }}
-        onHide={() => onHide()}
-      >
-        <img
-          src={require(`../../resources/${card.image}`)}
-          alt="Zoom on the card object"
-        />
-        <p>Enter the code</p>
-        <div>
-          <InputStyle
-            value={inputValue}
-            step={1}
-            min={0}
-            onValueChange={(e) => setInputValue(e.target.value)}
-          />
-          <ButtonStyle
-            label="Ok"
-            className=""
-            onClick={(e) => {
-              e.preventDefault();
-              if (inputValue === card.code) {
-                toast.success("Congratulation! You escaped from the room.");
-                setDisplayModal(false);
-              } else {
-                toast.error("Wrong combination. Try again!");
-              }
-            }}
-          />
-        </div>
-      </DialogStyle>
+      <Modal
+        setDisplayModal={setDisplayModal}
+        displayModal={displayModal}
+        card={card}
+      />
 
       {card?.title &&
         card?.id &&
@@ -82,7 +49,7 @@ export const Card = ({ card }) => {
               <div>{card.content}</div>
               <img
                 alt="Card"
-                src={require(`../../resources/${card.image}`)}
+                src={require(`../../resources/images/${card.image}`)}
                 // TODO implement a check for the path. If the image doesn't exist display a placeholder.
               />
             </div>

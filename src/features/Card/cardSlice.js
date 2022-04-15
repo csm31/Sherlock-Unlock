@@ -43,6 +43,9 @@ export const cardSlice = createSlice({
         )
       );
     },
+    resetGame: (state)=>{
+
+    }
   },
   extraReducers: {
     [initializeGame.pending]: (state, action) => {
@@ -62,7 +65,7 @@ export const cardSlice = createSlice({
 });
 
 // export actions
-export const { selectCard, deselectCard, revealCard, hideCards } =
+export const { selectCard, deselectCard, revealCard, hideCards,resetGame } =
   cardSlice.actions;
 
 // export slice

@@ -27,6 +27,8 @@ Sherlock Unlock is an escape game. The goal is to solve puzzles to escape from a
 
 ## Technical choices
 
+A mock API was used with the json-server library
+
 ## Technologies Used
 
 - React - version 17.0.2
@@ -69,7 +71,8 @@ Project is: _in progress_
 
 ## Roadmap
 
-- Use Nodejs
+- Build an API with Node JS
+- Internationalisation with i18next
 
 ## Contact
 

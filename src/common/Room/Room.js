@@ -1,4 +1,4 @@
-import room from "../../resources/room.jpg";
+import room from "../../resources/images/room.jpg";
 import { RoomStyle } from "./RoomStyle";
 import { Badge } from "../Badge/Badge";
 
