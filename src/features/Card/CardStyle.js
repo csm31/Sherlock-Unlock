@@ -80,7 +80,7 @@ export const InputStyle = styled(InputNumber)`
     padding: 0.25rem;
     text-align: center;
     margin: 0.5rem 0.25rem;
-    // width: 5rem;
+    width: 5rem;
   }
 `;
 

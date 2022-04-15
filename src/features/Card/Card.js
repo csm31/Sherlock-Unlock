@@ -1,50 +1,65 @@
 import { CardStyle, InputStyle, ButtonStyle, DialogStyle } from "./CardStyle";
-import "primeicons/primeicons.css";
 import { selectCard, deselectCard, selectCards } from "./cardSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Dialog } from "primereact/dialog";
 import { useState } from "react";
-import doorCode from "../../resources/door-code.png";
+import { toast } from "react-toastify";
 
 export const Card = ({ card }) => {
   const dispatch = useDispatch();
   const selectedCards = useSelector(selectCards);
 
-  const [input1, setInput1] = useState();
-  const [displayBasic, setDisplayBasic] = useState(false);
+  const [inputValue, setInputValue] = useState();
+  const [displayModal, setDisplayModal] = useState(false);
 
   const isSelected =
     selectedCards.length !== 0 &&
     selectedCards.find((number) => number === card.id);
 
   const onHide = () => {
-    setDisplayBasic(false);
+    setDisplayModal(false);
   };
 
+  const handleClickOnCard = () => {
+    if (card.cardType === "interactive") {
+      setDisplayModal(!displayModal);
+    } else {
+      !isSelected
+        ? dispatch(selectCard({ id: card.id }))
+        : dispatch(deselectCard({ id: card.id }));
+    }
+  };
   return (
     <>
+      {/* Define a modal */}
       <DialogStyle
-        // showHeader={false}
-        // closable={true}
-        visible={displayBasic}
+        visible={displayModal}
         style={{ width: "50vw" }}
         onHide={() => onHide()}
       >
-        <img src={doorCode} alt="Zoom on the door code" />
+        <img
+          src={require(`../../resources/${card.image}`)}
+          alt="Zoom on the card object"
+        />
         <p>Enter the code</p>
         <div>
           <InputStyle
-            value={input1}
-            // size="2"
+            value={inputValue}
             step={1}
             min={0}
-            // max={9}
-            onValueChange={(e) => setInput1(e.target.value)}
+            onValueChange={(e) => setInputValue(e.target.value)}
           />
           <ButtonStyle
             label="Ok"
             className=""
-            // onClick={(e) => handleClick(e)}
+            onClick={(e) => {
+              e.preventDefault();
+              if (inputValue === card.code) {
+                toast.success("Congratulation! You escaped from the room.");
+                setDisplayModal(false);
+              } else {
+                toast.error("Wrong combination. Try again!");
+              }
+            }}
           />
         </div>
       </DialogStyle>
@@ -56,9 +71,8 @@ export const Card = ({ card }) => {
         card?.cardType && (
           <CardStyle
             cardType={card.cardType}
-            // onClick={handleSelectCard}
-            onClick={() => setDisplayBasic(!displayBasic)}
-            // className={isSelected ? "selected" : ""}
+            onClick={() => handleClickOnCard()}
+            className={isSelected ? "selected" : ""}
           >
             <div className="p-card-header">
               <p className="p-card-number">{`N°${card.id}`}</p>
