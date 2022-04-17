@@ -1,9 +1,8 @@
 export const theme = {
   colors: {
     whiteGrey: "hsl(0, 0%, 97%)",
-    grey: "hsl(0,0%,50%)",
     purpleOpacity50: "hsla(231, 48%, 48%, 50%)",
-    greenOpacity20: "hsla(120,100%,25%, 20%)"
+    greenOpacity20: "hsla(120,100%,25%, 20%)",
   },
   cardType: {
     riddle: {

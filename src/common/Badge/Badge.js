@@ -1,23 +1,31 @@
-import { BadgeStyle } from "./BadgeStyle";
+import { ButtonStyle } from "./BadgeStyle";
+import { Badge as BadgeNumber } from "primereact/badge";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { revealCard } from "../../features/Card/cardSlice";
 
-export const Badge = ({label, name}) => {
-  const [disable, setDisable] = useState(false);
-  const dispatch=useDispatch()
+export const Badge = ({ id, name }) => {
+  const [disabled, setDisabled] = useState(false);
 
+  const dispatch = useDispatch();
+
+  /**
+   * Dispatch an action and disable the badge number
+   * @param {Object} e - event object
+   */
   const handleBadgeClick = (e) => {
     dispatch(revealCard(Number(e.target.textContent)));
-    setDisable(!disable)
+    setDisabled(!disabled);
   };
 
   return (
-    <BadgeStyle
-      label={label}
+    <ButtonStyle
+      value={id}
       className={`p-button-rounded p-button-sm ${name}`}
       onClick={(e) => handleBadgeClick(e)}
-      disabled={disable}
-    />
+      disabled={disabled}
+    >
+      <BadgeNumber value={id} />
+    </ButtonStyle>
   );
 };

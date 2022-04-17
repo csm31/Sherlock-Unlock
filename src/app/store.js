@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import cardReducer from "../features/Card/cardSlice";
 
 // Create a root reducer which will delegate the action to your combined reducer
@@ -9,7 +9,8 @@ const combinedReducer = combineReducers({
 });
 
 const rootReducer = (state, action) => {
-  if (action.type === 'card/resetGame') { // check for action type 
+  if (action.type === "card/resetGame") {
+    // check for action type
     state = undefined;
   }
   return combinedReducer(state, action);
@@ -18,4 +19,3 @@ const rootReducer = (state, action) => {
 export const store = configureStore({
   reducer: rootReducer,
 });
-

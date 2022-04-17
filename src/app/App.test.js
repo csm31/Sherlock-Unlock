@@ -1,14 +1,21 @@
-import  App  from "./App";
-import { mount, shallow } from "enzyme";
+import App from "./App";
+import { mount } from "enzyme";
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../theme";
+import { BrowserRouter } from "react-router-dom";
 
 describe("App component", () => {
   // render Card before each test
   let reactWrapper;
   beforeEach(() => {
-    reactWrapper = mount(<ThemeProvider theme={theme}><App /></ThemeProvider>);
+    reactWrapper = mount(
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
+    );
   });
 
   it("has a header", () => {
@@ -23,12 +30,7 @@ describe("App component", () => {
     expect(reactWrapper.find("main").length).toBe(1);
   });
 
-  it("has the component Room, Inventory, Introduction and Device", () => {
-    expect(reactWrapper.find("Room").length).toBe(1);
-    expect(reactWrapper.find("Inventory").length).toBe(1);
+  it("has the component Introduction", () => {
     expect(reactWrapper.find("Introduction").length).toBe(1);
-    expect(reactWrapper.find("Device").length).toBe(1);
   });
-
-
 });

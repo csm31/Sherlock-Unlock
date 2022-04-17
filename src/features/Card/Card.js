@@ -6,10 +6,12 @@ import { Modal } from "../../common/Modal/Modal";
 
 export const Card = ({ card }) => {
   const [displayModal, setDisplayModal] = useState(false);
+
   const selectedCards = useSelector(selectCards);
   const isSelected = selectedCards.find((number) => number === card.id);
 
   const dispatch = useDispatch();
+
   /**
    * Display the modal if the card is interactive.If not, select it.
    */

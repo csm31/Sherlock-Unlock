@@ -29,7 +29,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </MainStyle>
-      <ToastContainer position="bottom-center" autoClose={3000}/>
+      <ToastContainer position="bottom-center" autoClose={3000} />
     </>
   );
 }

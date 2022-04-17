@@ -6,11 +6,11 @@ import {
   revealCard,
   hideCards,
   initializeGame,
+  selectCards,
 } from "../../features/Card/cardSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Card } from "../../features/Card/Card";
 import { useEffect } from "react";
-import { selectCards } from "../../features/Card/cardSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

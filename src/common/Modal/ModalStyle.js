@@ -7,25 +7,26 @@ import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
 
 export const DialogStyle = styled(Dialog)`
-  & img {
+  img {
     width: 60%;
     margin-bottom: 1rem;
   }
-  & .p-dialog-content {
+  .p-dialog-content {
     display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
 
-    & p {
+    p {
       margin-left: 0;
     }
 
-    & div {
+    div {
       display: flex;
     }
   }
 
-  & .p-dialog, .p-dialog-header {
+  .p-dialog,
+  .p-dialog-header {
     padding: 0;
   }
 `;

@@ -13,7 +13,7 @@ export const Modal = ({ setDisplayModal, displayModal, card }) => {
   let navigate = useNavigate();
 
   /**
-   * Check if the code is right or not
+   * Check if the code entered is right or not
    */
   const handleValidateCode = () => {
     if (inputValue === card.code) {

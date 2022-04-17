@@ -40,13 +40,4 @@ export const GlobalStyles = (theme) => css`
     cursor: pointer;
     background-color: transparent;
   }
-
-  // main {
-  //   // push the footer at the bottom
-  //   flex-grow: 1;
-  // }
-
-  // input {
-  //   border-radius: 3px;
-  // }
 `;

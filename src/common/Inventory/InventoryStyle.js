@@ -5,7 +5,7 @@ export const InventoryStyle = styled.div`
   min-height: 10rem;
   padding: 1rem;
 
-  & .cards-container {
+  .cards-container {
     display: flex;
     flex-wrap: wrap;
   }

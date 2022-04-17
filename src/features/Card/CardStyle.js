@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 
-
-
 export const CardStyle = styled.button`
   display: flex;
   flex-direction: column;
@@ -20,34 +18,32 @@ export const CardStyle = styled.button`
   border-radius: 5px;
   margin: 0.25rem;
 
-  & .p-card-header {
+  .p-card-header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: ${(props) =>
       props.theme.cardType[props.cardType].backgroundColor};
-    & h2 {
+    h2 {
       font-size: 1.25rem;
     }
   }
 
-  & .p-card-content {
+  .p-card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 12rem;
     justify-content: space-evenly;
 
-    & div {
+    div {
       margin: 0.25rem 0.5rem;
     }
 
-    & img {
+    img {
       width: 10rem;
       height: 7rem;
       margin: 1rem;
     }
   }
 `;
-
-
