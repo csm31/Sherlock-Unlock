@@ -4,18 +4,21 @@ import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../../theme";
 import { BrowserRouter } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { store } from "../../app/store";
+import { Provider } from "react-redux";
 
 describe("Introduction component", () => {
   // render Card before each test
   let reactWrapper;
   beforeEach(() => {
     reactWrapper = mount(
+      <Provider store={store}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Introduction />
         </BrowserRouter>
       </ThemeProvider>
+      </Provider>
     );
   });
 

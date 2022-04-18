@@ -19,8 +19,9 @@ export const Modal = ({ setDisplayModal, displayModal, card }) => {
     if (inputValue === card.code) {
       setDisplayModal(false);
       navigate("/");
-      dispatch(resetGame());
       toast.success("Congratulation! You escaped from the room.");
+      // Reset store
+      dispatch(resetGame());
     } else {
       toast.error("Wrong combination. Try again!");
     }

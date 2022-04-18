@@ -3,21 +3,19 @@ import { mount } from "enzyme";
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../../theme";
+import { store } from "../../app/store";
+import { Provider } from "react-redux";
 
-describe("Device component", () => {
-  // mock a function
-  const handleBadgeClickMock = jest.fn();
-  // define props to apply to the component
-  const props = {
-    handleBadgeClick: () => handleBadgeClickMock(),
-  };
+describe("Room component", () => {
   // render Card before each test
   let reactWrapper;
   beforeEach(() => {
     reactWrapper = mount(
-      <ThemeProvider theme={theme}>
-        <Room {...props} />
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Room />
+        </ThemeProvider>
+      </Provider>
     );
   });
 
@@ -29,8 +27,8 @@ describe("Device component", () => {
     expect(alt).toBe("Sherlock Holmes office");
   });
 
-  it('Should call "handleBadgeClick" when we click on the badge N°5.', () => {
-    reactWrapper.find("button.door").at(0).simulate("click");
-    expect(handleBadgeClickMock).toHaveBeenCalled();
+  it("has 3 badge number", () => {
+    expect(reactWrapper.find("button.p-button-rounded").length).toBe(3);
+
   });
 });

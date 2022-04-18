@@ -4,17 +4,21 @@ import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "../theme";
 import { BrowserRouter } from "react-router-dom";
+import { store } from "../app/store";
+import { Provider } from "react-redux";
 
 describe("App component", () => {
   // render Card before each test
   let reactWrapper;
   beforeEach(() => {
     reactWrapper = mount(
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </Provider>
     );
   });
 
@@ -30,7 +34,12 @@ describe("App component", () => {
     expect(reactWrapper.find("main").length).toBe(1);
   });
 
-  it("has the component Introduction", () => {
-    expect(reactWrapper.find("Introduction").length).toBe(1);
+  it("pathname '/' by default", () => {
+    expect(window.location.pathname).toBe("/");
+  });
+
+  it("pathname '/game' when click on Start game", () => {
+    reactWrapper.find("a").simulate("click", { button: 0 });
+    expect(window.location.pathname).toBe("/game");
   });
 });

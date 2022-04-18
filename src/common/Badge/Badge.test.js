@@ -24,9 +24,7 @@ describe("Inventory component", () => {
   });
 
   it("is not disabled by default", () => {
-    const badge = reactWrapper.find("button");
-    console.log(badge.props());
-    expect(badge.props().disabled).toBe(false);
+    expect(reactWrapper.find("button").props().disabled).toBe(false);
   });
 
   it("has the class: p-button-rounded p-button-sm door", () => {

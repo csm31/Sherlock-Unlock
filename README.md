@@ -2,59 +2,43 @@
 
 Sherlock Unlock is an escape game. The goal is to solve puzzles to escape from a room.
 
-<!-- TODO > Live demo [_here_](https://www.example.com).
--->
-
 ## Table of Contents
 
-- [General Information](#general-information)
 - [Start the app](#start-app)
-- [Technical choices](#technical-choices)
-- [Technologies Used](#technologies-used)
-- [Other available scripts](#available-scripts)
+- [Test the app](#start-app)
+- [Main Technologies Used](#main-technologies-used)
+- [Temporary Technical choices](#technical-choices)
 - [Development Rules](#development-rules)
-- [Project Status](#project-status)
 - [Roadmap](#roadmap)
 - [Contact](#contact)
 
-## General Information
-
 ## Start the app
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 - Run `npm install` to install the libraries
 - Run `npm run dev` to run the app in development mode with JSON Server.\
 - Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
-## Technical choices
+## Test the app
 
-A mock API was used with the json-server library
+- run `npm test`
+  It launches the test runner in the interactive watch mode.\
 
-## Technologies Used
+## Main Technologies Used
 
 - React - version 17.0.2
 - Redux - version 4.1.2
 - Emotion - version 11.9.0 : library for writing css styles with JavaScript (css-in-js). I used the package @emotion/react that is recommended for React. I also used @emotion/styled to create components that have styles attached to them
+- PrimeReact UI framework
+- React Router library to navigate to pages
+- Jest for testing
 
-## Other available scripts
+## Temporary Technical choices
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). In the project directory, you can run:
+I put myself in the shoes of a front-end developer. Since I didn't have an API at my disposal, I chose to mock it with the json-server library. This choice prevented me to deploy the application with Netlify. In real life, when the API would have been ready, I would have made the switch.
 
-### `npm test`
-
-<!-- TODO to configure and to create test file -->
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For testing, in addition to Jest, I used Enzyme. In real life, it shouldn't be the choice for a long-term project since there will be no Enzyme adapter for React v18. I had to stay at the v17 for this technical test. The recommended choice to replace Enzyme is the React Testing Library.
 
 ## Development Rules
 
@@ -65,14 +49,12 @@ Follow a lightweight version of GitFlow:
 - When a feature is finished and tested, merge in develop
 - The main branch will be used to deploy to production -> to publish it to the web
 
-## Project Status
-
-Project is: _in progress_
-
 ## Roadmap
 
-- Build an API with Node JS
+- Replace json-server with a real API
+- Once the real API is used, deploy the application with Netlify
 - Internationalisation with i18next
+- Improve test coverage
 
 ## Contact
 
