@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <>
       <HeaderStyle className="App-header">
@@ -32,6 +32,6 @@ function App() {
       <ToastContainer position="bottom-center" autoClose={3000} />
     </>
   );
-}
+};
 
 export default App;
